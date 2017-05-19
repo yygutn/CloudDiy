@@ -1,0 +1,126 @@
+buildscript {
+    ext {
+        compileSdkVersion = 25
+        buildToolsVersion = "25.0.2"
+        minSdkVersion = 14
+        targetSdkVersion = 25
+        versionCode = 102
+        versionName = "2.0.2"
+
+        androidSupportSdkVersion = "25.3.1"
+        retrofitSdkVersion = "2.2.0"
+        dagger2SdkVersion = "2.10"
+        rxlifecycleSdkVersion = "1.0"
+        rxlifecycle2SdkVersion = "2.0.1"
+        espressoSdkVersion = "2.2.2"
+        canarySdkVersion = "1.5"
+        ankoSdkVersion = "0.10.0"
+
+        dependencies = [
+                //kotlin
+                "kotlin-stdlib-jre7"       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+                "kotlin-android-extensions": "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version",
+
+                //anko-commons
+                "ankoCommon"               : "org.jetbrains.anko:anko:$ankoSdkVersion",
+
+                //anko-layouts
+                "ankoSdk15"                : "org.jetbrains.anko:anko-sdk15:$ankoSdkVersion", // sdk15, sdk19, sdk21, sdk23 are also available
+                "ankoV7"                   : "org.jetbrains.anko:anko-appcompat-v7:$ankoSdkVersion",
+
+                // Coroutine listeners for Anko Layouts
+                "ankoSdk15Coroutines"      : "org.jetbrains.anko:anko-sdk15-coroutines:$ankoSdkVersion",
+                "ankoV7Coroutines"         : "org.jetbrains.anko:anko-appcompat-v7-coroutines:$ankoSdkVersion",
+
+                // Design
+                "ankoDesign"               : "org.jetbrains.anko:anko-design:$ankoSdkVersion",
+                "ankoDesignCoroutines"     : "org.jetbrains.anko:anko-design-coroutines:$ankoSdkVersion",
+
+                // RecyclerView-v7
+                "ankoRecView"              : "org.jetbrains.anko:anko-recyclerview-v7:$ankoSdkVersion",
+                "ankoRecViewCoroutines"    : "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$ankoSdkVersion",
+
+                //support
+                "appcompat-v7"             : "com.android.support:appcompat-v7:$androidSupportSdkVersion",
+                "design"                   : "com.android.support:design:$androidSupportSdkVersion",
+                "support-v4"               : "com.android.support:support-v4:$androidSupportSdkVersion",
+                "cardview-v7"              : "com.android.support:cardview-v7:$androidSupportSdkVersion",
+                "annotations"              : "com.android.support:support-annotations:$androidSupportSdkVersion",
+                "recyclerview-v7"          : "com.android.support:recyclerview-v7:$androidSupportSdkVersion",
+                "constraint-layout"        : "com.android.support.constraint:constraint-layout:1.0.0-alpha7",
+
+                //network
+                "retrofit"                 : "com.squareup.retrofit2:retrofit:$retrofitSdkVersion",
+                "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:$retrofitSdkVersion",
+                "retrofit-adapter-rxjava"  : "com.squareup.retrofit2:adapter-rxjava:$retrofitSdkVersion",
+                "retrofit-adapter-rxjava2" : "com.squareup.retrofit2:adapter-rxjava2:$retrofitSdkVersion",
+                "okhttp3"                  : "com.squareup.okhttp3:okhttp:3.7.0",
+                "okhttp-urlconnection"     : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+                "glide"                    : "com.github.bumptech.glide:glide:3.8.0",
+                "picasso"                  : "com.squareup.picasso:picasso:2.5.2",
+
+                //view
+                "autolayout"               : "com.zhy:autolayout:1.4.5",
+                "pickerview"               : "com.bigkoo:pickerview:2.0.8",
+                "photoview"                : "com.github.chrisbanes.photoview:library:1.2.3",
+                "numberprogressbar"        : "com.daimajia.numberprogressbar:library:1.2@aar",
+                "nineoldandroids"          : "com.nineoldandroids:library:2.4.0",
+                "paginate"                 : "com.github.markomilos:paginate:0.5.1",
+                "fragmentation"            : "me.yokeyword:fragmentation:+",
+
+                //rx1
+                "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
+                "rxjava"                   : "io.reactivex:rxjava:1.2.9",
+                "rxlifecycle"              : "com.trello:rxlifecycle:$rxlifecycleSdkVersion",
+                "rxlifecycle-components"   : "com.trello:rxlifecycle-components:$rxlifecycleSdkVersion",
+                "rxcache"                  : "com.github.VictorAlbertos.RxCache:runtime:1.7.0-1.x",
+                "rxcache-jolyglot-gson"    : "com.github.VictorAlbertos.Jolyglot:gson:0.0.3",
+                "rxbinding-recyclerview-v7": "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.1",
+                "rxpermissions"            : "com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar",
+                "rxerrorhandler"           : "me.jessyan:rxerrorhandler:1.0.1",
+
+                //rx2
+                "rxandroid2"               : "io.reactivex.rxjava2:rxandroid:2.0.1",
+                "rxjava2"                  : "io.reactivex.rxjava2:rxjava:2.1.0",
+                "rxlifecycle2"             : "com.trello.rxlifecycle2:rxlifecycle:$rxlifecycle2SdkVersion",
+                "rxlifecycle2-components"  : "com.trello.rxlifecycle2:rxlifecycle-components:$rxlifecycle2SdkVersion",
+                "rxcache2"                 : "com.github.VictorAlbertos.RxCache:runtime:1.8.0-2.x",
+                "rxpermissions2"           : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar",
+                "rxerrorhandler2"          : "me.jessyan:rxerrorhandler:2.0.1",
+
+                //tools
+                "dagger2"                  : "com.google.dagger:dagger:$dagger2SdkVersion",
+                "dagger2-compiler"         : "com.google.dagger:dagger-compiler:$dagger2SdkVersion",
+                "androideventbus"          : "org.simple:androideventbus:1.0.5.1",
+                "otto"                     : "com.squareup:otto:1.3.8",
+                "baseAdapterHelper"                     : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.16',
+                "gson"                     : "com.google.code.gson:gson:2.8.0",
+                "multidex"                 : "com.android.support:multidex:1.0.1",
+                "javax.annotation"         : "javax.annotation:jsr250-api:1.0",
+
+                //test
+                "junit"                    : "junit:junit:4.12",
+                "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
+                "runner"                   : "com.android.support.test:runner:0.5",
+                "espresso-core"            : "com.android.support.test.espresso:espresso-core:$espressoSdkVersion",
+                "espresso-contrib"         : "com.android.support.test.espresso:espresso-contrib:$espressoSdkVersion",
+                "espresso-intents"         : "com.android.support.test.espresso:espresso-intents:$espressoSdkVersion",
+                "mockito-core"             : "org.mockito:mockito-core:1.+",
+                "timber"                   : "com.jakewharton.timber:timber:4.5.1",
+                "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:$canarySdkVersion",
+                "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:$canarySdkVersion",
+                "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1"
+        ]
+    }
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}

@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile(rootProject.ext.dependencies["espresso-core"], {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    debugCompile rootProject.ext.dependencies["junit"]
+
+    debugCompile rootProject.ext.dependencies["canary-debug"]
+
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["rxandroid2"]
+    compile rootProject.ext.dependencies["autolayout"]
+    compile rootProject.ext.dependencies["photoview"]
+    compile rootProject.ext.dependencies["pickerview"]
+    compile rootProject.ext.dependencies["fragmentation"]
+    compile rootProject.ext.dependencies["baseAdapterHelper"]
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofit-converter-gson"]
+    compile rootProject.ext.dependencies["retrofit-adapter-rxjava2"]
+
+
+    compile rootProject.ext.dependencies["kotlin-stdlib-jre7"]
+    compile rootProject.ext.dependencies["kotlin-android-extensions"]
+    compile(rootProject.ext.dependencies["ankoCommon"], {
+        exclude group: 'com.google.android', module: 'android'
+    })
+    compile (rootProject.ext.dependencies["ankoSdk15"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+    })
+    compile (rootProject.ext.dependencies["ankoV7"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+        exclude group: 'com.google.android', module: 'android'
+    })
+    compile (rootProject.ext.dependencies["ankoDesign"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+        exclude group: 'com.google.android', module: 'android'
+    })
+    compile (rootProject.ext.dependencies["ankoDesignCoroutines"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+        exclude group: 'com.google.android', module: 'android'
+    })
+    compile (rootProject.ext.dependencies["ankoSdk15Coroutines"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+        exclude group: 'com.google.android', module: 'android'
+    })
+    compile (rootProject.ext.dependencies["ankoV7Coroutines"],{
+        exclude group:'org.jetbrains.anko',module:'anko-commons'
+        exclude group: 'com.google.android', module: 'android'
+    })
+
+}
+repositories {
+    mavenCentral()
+}
